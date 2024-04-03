@@ -50,6 +50,8 @@ return {
           isort = { enabled = true },
           mypy = { enabled = true },
           flake8 = { enabled = true },
+          rope = { enabled = true },
+          memestra = { enabled = true },
         },
       },
       python = {
