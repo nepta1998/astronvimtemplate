@@ -7,5 +7,6 @@ return {
     vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
     vim.keymap.set('i', '<C-f>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
     vim.keymap.set('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+    vim.keymap.set({'n', 'i', 'v'}, '<C-w>', function() return vim.fn['codeium#Chat']() end, { expr = true })
   end
 }
