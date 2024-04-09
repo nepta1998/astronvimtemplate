@@ -7,4 +7,5 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.recipes.vscode-icons" },
+  { import = "astrocommunity.colorscheme.catppuccin" },
 }
