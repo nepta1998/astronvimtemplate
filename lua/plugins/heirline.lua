@@ -12,6 +12,7 @@ return {
         GitChange = "",
         GitDelete = "",
         CodeiumIcon = "",
+        TabnineIcon = "🔮",
       },
       -- modify variables used by heirline but not defined in the setup call directly
       status = {
@@ -217,7 +218,33 @@ return {
             surround = { separator = "none", color = "file_info_bg" },
           }),
         },
-        
+        {
+          status.component.builder({
+            { provider = require("astroui").get_icon("TabnineIcon") },
+            -- add padding after icon
+            padding = { right = 1 },
+            -- set the icon foreground
+            hl = { fg = "bg" },
+            -- use the right separator and define the background color
+            -- as well as the color to the left of the separator
+            surround = {
+              separator = "right",
+              color = { main = "codeium_icon_bg", left = "file_info_bg" },
+            },
+          }),
+          status.component.builder({
+            {
+              provider = function()
+                return status.utils.stylize(require('tabnine.status').status(), {
+                  padding = { right = 2 , left = 1},
+                })
+              end,
+            },
+            -- hl = status.hl.get_attributes("mode"), -- highlight based on mode attributes
+            hl = { fg = "fg" },
+            surround = { separator = "none", color = "file_info_bg" },
+          }),
+        },
       }
     end,
   },
