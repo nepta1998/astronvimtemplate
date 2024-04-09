@@ -11,7 +11,7 @@ return {
         GitAdd = "",
         GitChange = "",
         GitDelete = "",
-        CodeiumIcon = "",
+        CodeiumIcon = "🧙",
         TabnineIcon = "🔮",
       },
       -- modify variables used by heirline but not defined in the setup call directly
