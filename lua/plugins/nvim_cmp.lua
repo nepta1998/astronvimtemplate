@@ -19,7 +19,7 @@ return {
     -- config tabnine
     -- opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "cmp_tabnine", group_index = 1, priority = 100 } }))
   end,
-  config = function(plugin, opts)
+  config = function(_, opts)
     local cmp = require("cmp")
     -- run cmp setup
     cmp.setup(opts)
@@ -30,9 +30,9 @@ return {
         formatting = {
             format = require('lspkind').cmp_format({
                 mode = "symbol",
-                maxwidth = 50,
+                maxwidth = 80,
                 ellipsis_char = '...',
-                symbol_map = { Codeium = "", }
+                symbol_map = { Codeium = "🔮", }
             })
         }
       }
