@@ -4,7 +4,7 @@ return {
   dependencies = "hrsh7th/nvim-cmp",
   opts = {
     max_lines = 1000,
-    max_num_results = 3,
+    max_num_results = 5,
     sort = true,
   },
   config = function(_, opts)

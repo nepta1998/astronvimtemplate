@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 return {
   'codota/tabnine-nvim',
   build = "./dl_binaries.sh",

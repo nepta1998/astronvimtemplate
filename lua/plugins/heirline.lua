@@ -29,15 +29,15 @@ return {
       --   },
       --   -- hl = status.hl.get_attributes("mode"), -- highlight based on mode attributes
       -- }),
-      -- status.component.builder({
-      --     {
-      --       provider = function()
-      --         return status.utils.stylize("🔮 ".. require('tabnine.status').status(), {
-      --           padding = { right = 1 },
-      --         })
-      --       end,
-      --     },
-      -- }),
+      status.component.builder({
+          {
+            provider = function()
+              return status.utils.stylize(" 🧙 ".. require('tabnine.status').status(), {
+                padding = { right = 1 },
+              })
+            end,
+          },
+      }),
     }
 
   end,
