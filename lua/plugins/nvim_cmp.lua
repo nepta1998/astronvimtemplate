@@ -30,7 +30,7 @@ return {
         formatting = {
             format = require('lspkind').cmp_format({
                 mode = "symbol",
-                maxwidth = 100,
+                maxwidth = 80,
                 ellipsis_char = '...',
                 symbol_map = { Codeium = "🔮", TabNine = "🧙"}
             })
