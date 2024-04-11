@@ -3,7 +3,7 @@ return {
   build = "./install.sh",
   dependencies = "hrsh7th/nvim-cmp",
   opts = {
-    max_lines = 80,
+    max_lines = 50,
     max_num_results = 5,
     sort = true,
   },
