@@ -19,7 +19,7 @@ return {
       formatting = {
         format = require('lspkind').cmp_format({
             mode = "symbol_text",
-            maxwidth = 80,
+            maxwidth = 50,
             ellipsis_char = '...',
             symbol_map = { Codeium = "🔮", TabNine = "🧙"},
             -- before = function (entry, vim_item)
