@@ -73,6 +73,8 @@ return {
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
         -- delete selected word.
         ["<leader>s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], desc = "Delete selected word" },
+        -- Codeium
+        ["<leader>1"] = { name = "Codeium", desc = "🔮" .. "Codeium" },
         ["<leader>1c"] = { [[:Codeium Chat<CR>]], desc = "Codeium Chat" },
       },
       v = {
