@@ -52,6 +52,7 @@ return {
           flake8 = { enabled = true },
           rope = { enabled = true },
           memestra = { enabled = true },
+          ruff = { enabled = true },
         },
       },
       python = {
