@@ -53,6 +53,7 @@ return {
           rope = { enabled = true },
           memestra = { enabled = true },
           ruff = { enabled = true },
+          spyder = { enabled = true },
         },
       },
       python = {
