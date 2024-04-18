@@ -35,6 +35,7 @@ return {
       g = { -- vim.g.<key>
         python3_host_prog = "/home/neptali/miniconda3/bin/python3", -- set default python env
         loaded_perl_provider = 0, -- fix warning to  load perl
+        loaded_ruby_provider = 0, -- fix warning to  load ruby
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
