@@ -74,7 +74,10 @@ return {
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
         -- delete selected word.
-        ["<leader>s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], desc = "Delete selected word" },
+        ["<Leader>s"] = { desc = "👀" .. "Search word and edit" },
+
+        ["<leader>si"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gi<Left><Left><Left>]], desc = "Change word - Not confirmation" },
+        ["<leader>sc"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gic<left><Left><Left><Left>]], desc = "Change word - confirmation" },
         -- Codeium
         ["<leader>1"] = { name = "Codeium", desc = "🔮" .. "Codeium" },
         ["<leader>1c"] = { [[:Codeium Chat<CR>]], desc = "Codeium Chat" },

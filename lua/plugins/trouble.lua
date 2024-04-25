@@ -4,7 +4,7 @@ return {
   keys = {
     {
     "<leader>2",
-      name = "Trouble", desc = "👀" .. "Trouble"
+      name = "Trouble", desc = "🦴" .. "Trouble"
     },
     {
       "<leader>2x",
