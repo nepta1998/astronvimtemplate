@@ -43,19 +43,19 @@ return {
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
-      -- pylsp = {
-      --   plugins = {
-      --     pylint = { enabled = true },
-      --     black = { enabled = true },
-      --     isort = { enabled = true },
-      --     mypy = { enabled = true },
-      --     flake8 = { enabled = true },
-      --     rope = { enabled = true },
-      --     memestra = { enabled = true },
-      --     ruff = { enabled = true },
-      --     spyder = { enabled = true },
-      --   },
-      -- },
+      pylsp = {
+        plugins = {
+          pylint = { enabled = true },
+          black = { enabled = true },
+          isort = { enabled = true },
+          mypy = { enabled = true },
+          flake8 = { enabled = true },
+          -- rope = { enabled = true },
+          -- memestra = { enabled = true },
+          -- ruff = { enabled = true },
+          -- spyder = { enabled = true },
+        },
+      },
       python = {
         analysis = {
           autoImportCompletions = true,
