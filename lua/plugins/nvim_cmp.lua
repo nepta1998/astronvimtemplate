@@ -7,7 +7,7 @@ return {
     -- config codeium
     -- opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "codeium", group_index = 1, priority = 1000 } }))
     -- config tabnine
-    opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "cmp_tabnine", group_index = 2, priority = 900 } }))
+    opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "cmp_tabnine", group_index = 1, priority = 1000 } }))
   end,
   config = function(_, opts)
     local cmp = require("cmp")
