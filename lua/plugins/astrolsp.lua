@@ -63,6 +63,10 @@ return {
           useLibraryCodeForTypes = true
         },
       },
+      basedpyright = {
+          typeCheckingMode = "standard",
+          reportMissingSuperCall = false
+        },
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
     },
     -- customize how language servers are attached
