@@ -7,11 +7,31 @@ return {
     opts = {},
     cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
     keys = {
-            {
-                mode = { 'v', 'n' },
-                '<Leader>m',
-                '<cmd>MCstart<cr>',
-                desc = 'Create a selection for selected text or word under the cursor',
-            },
+        {
+            mode = { 'v', 'n' },
+            '<Leader>m',
+            '<cmd>MCstart<cr>',
+            desc = 'Create a selection for selected text or word under the cursor',
         },
+    },
+    config = function(_, opts)
+        local multicursors = require('multicursors')
+        multicursors.setup(opts)
+        multicursors.setup {
+            hint_config = {
+                border = 'rounded',
+                position = 'bottom-right',
+            },
+            generate_hints = {
+                normal = true,
+                insert = true,
+                extend = true,
+                config = {
+                    column_count = 1,
+                    -- maximum width of a column.
+                    max_hint_length = 25,
+                },
+            },
+        }
+    end,
 }
