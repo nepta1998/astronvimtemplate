@@ -4,6 +4,8 @@ return {
   opts = function(_, opts)
     -- import nvim-cmp plugin
     local cmp = require("cmp")
+    -- config supermaven
+    opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "supermaven", group_index = 1, priority = 1000 } }))
     -- config codeium
     opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "codeium", group_index = 1, priority = 1000 } }))
     -- config tabnine
@@ -19,9 +21,9 @@ return {
       formatting = {
         format = require('lspkind').cmp_format({
             mode = "symbol_text",
-            maxwidth = 50,
+            maxwidth = 80,
             ellipsis_char = '...',
-            symbol_map = { Codeium = "🔮", TabNine = "🧙"},
+            symbol_map = { Codeium = "🔮", TabNine = "🧙", Supermaven = "🔥"},
             -- before = function (entry, vim_item)
             --   -- set max width of cmp window
             --   local width = 30
