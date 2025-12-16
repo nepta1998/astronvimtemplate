@@ -43,6 +43,10 @@ return {
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
+      pyright = {
+        -- Specific Pyright setting to disable reachability analysis in the language server
+        enableReachabilityAnalysis = false,
+      },
       pylsp = {
         plugins = {
           pylint = { enabled = true },
