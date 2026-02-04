@@ -100,8 +100,7 @@ return {
       t = {
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,
-        ["<leader>1"] = { group = "Opencode", icon = "🔮"},
-        ["<leader>1t"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
+        ["<C-\\>"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
       },
     },
   },
