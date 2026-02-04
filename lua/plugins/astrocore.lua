@@ -72,23 +72,36 @@ return {
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
         -- quick save
-        -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+        ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
         -- delete selected word.
         ["<Leader>s"] = { desc = "👀" .. "Search word and edit" },
 
         ["<leader>si"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gi<Left><Left><Left>]], desc = "Change word - Not confirmation" },
         ["<leader>sc"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gic<left><Left><Left><Left>]], desc = "Change word - confirmation" },
-        -- Codeium
-        ["<leader>1"] = { name = "Codeium", desc = "🔮" .. "Codeium" },
-        ["<leader>1c"] = { [[:Codeium Chat<CR>]], desc = "Codeium Chat" },
+
+        -- Opencode
+        ["<leader>1"] = { group = "Opencode", icon = "🔮"},
+        ["<leader>1a"] = { function() require("opencode").ask("@this: ", { submit = true }) end, desc = "Ask opencode…" },
+        ["<leader>1c"] = { function() require("opencode").select() end, desc = "Execute opencode action…" },
+        ["<leader>1t"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
+        ["<leader>1gr"] = { function() return require("opencode").operator("@this ") end,  desc = "Add range to opencode", expr = true  },
+        ["<leader>1go"] = { function() return require("opencode").operator("@this ") .. "_" end,  desc = "Add line to opencode", expr = true  },
+        ["<leader>1u"] = { function() require("opencode").command("session.half.page.up") end, desc = "Scroll opencode up" },
+        ["<leader>1d"] = { function() require("opencode").command("session.half.page.down") end, desc = "Scroll opencode down" },
       },
       v = {
         ["J"] = { ":m '>+1<CR>gv-gv" },
         ["K"] = { ":m '<-2<CR>gv-gv" },
+        ["<leader>1"] = { group = "Opencode", icon = "🔮"},
+        ["<leader>1a"] = { function() require("opencode").ask("@this: ", { submit = true }) end, desc = "Ask opencode…" },
+        ["<leader>1c"] = { function() require("opencode").select() end, desc = "Execute opencode action…" },
+        ["<leader>1gr"] = { function() return require("opencode").operator("@this ") end, desc = "Add range to opencode", expr = true },
       },
       t = {
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,
+        ["<leader>1"] = { group = "Opencode", icon = "🔮"},
+        ["<leader>1t"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
       },
     },
   },
