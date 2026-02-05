@@ -12,4 +12,5 @@ return {
   { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.json" },
+  { import = "astrocommunity.pack.markdown" },
 }
