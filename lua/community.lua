@@ -10,4 +10,5 @@ return {
   { import = "astrocommunity.recipes.vscode-icons" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.typescript" },
 }
