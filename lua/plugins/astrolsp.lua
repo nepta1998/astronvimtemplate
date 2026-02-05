@@ -43,13 +43,6 @@ return {
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
-     pyright = {
-        settings = {
-          pyright = {
-            disableTaggedHints = true,
-          },
-        },
-      },
       pylsp = {
         plugins = {
           pylint = { enabled = true },
@@ -63,12 +56,14 @@ return {
           spyder = { enabled = true },
         },
       },
-      python = {
-        analysis = {
-          autoImportCompletions = true,
-          diagnosticMode = "workspace",
-          useLibraryCodeForTypes = true,
-          enableReachabilityAnalysis = false,
+      basedpyright = {
+        settings = {
+          basedpyright = {
+            analysis = {
+              -- Dejamos esto vacío o con lo mínimo, ya que el JSON manda
+              typeCheckingMode = "basic",
+            },
+          },
         },
       },
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
