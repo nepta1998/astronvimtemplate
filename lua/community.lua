@@ -11,4 +11,5 @@ return {
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.json" },
 }
