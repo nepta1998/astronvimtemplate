@@ -1,12 +1,12 @@
 return {
   "rebelot/heirline.nvim",
   opts = function(_, opts)
-    local status = require("astroui.status")
+    local status = require "astroui.status"
     opts.statusline = { -- statusline
       hl = { fg = "fg", bg = "bg" },
-      status.component.mode({
+      status.component.mode {
         mode_text = { padding = { left = 1, right = 1 } },
-      }), -- add the mode text
+      }, -- add the mode text
       status.component.git_branch(),
       status.component.file_info(),
       status.component.git_diff(),
@@ -29,16 +29,26 @@ return {
       --   },
       --   -- hl = status.hl.get_attributes("mode"), -- highlight based on mode attributes
       -- }),
-      status.component.builder({
-          {
-            provider = function()
-              return status.utils.stylize(" 🧙 ".. require('tabnine.status').status(), {
-                padding = { right = 1 },
-              })
-            end,
-          },
-      }),
+      status.component.builder {
+        {
+          provider = function()
+            local ok, opencode = pcall(require, "opencode")
+            return status.utils.stylize(ok and opencode.statusline() or "", {
+              padding = { right = 1, left = 1 },
+            })
+          end,
+        },
+        -- hl = status.hl.get_attributes("mode"), -- highlight based on mode attributes
+      },
+      status.component.builder {
+        {
+          provider = function()
+            return status.utils.stylize(" 🧙 " .. require("tabnine.status").status(), {
+              padding = { right = 1 },
+            })
+          end,
+        },
+      },
     }
-
   end,
 }
