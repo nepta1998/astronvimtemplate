@@ -88,6 +88,7 @@ return {
         ["<leader>1go"] = { function() return require("opencode").operator("@this ") .. "_" end,  desc = "Add line to opencode", expr = true  },
         ["<leader>1u"] = { function() require("opencode").command("session.half.page.up") end, desc = "Scroll opencode up" },
         ["<leader>1d"] = { function() require("opencode").command("session.half.page.down") end, desc = "Scroll opencode down" },
+        ["<leader>m"] = { desc = " Markdown Preview"},
       },
       v = {
         ["J"] = { ":m '>+1<CR>gv-gv" },
