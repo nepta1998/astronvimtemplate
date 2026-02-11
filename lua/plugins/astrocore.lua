@@ -89,6 +89,7 @@ return {
         ["<leader>1u"] = { function() require("opencode").command("session.half.page.up") end, desc = "Scroll opencode up" },
         ["<leader>1d"] = { function() require("opencode").command("session.half.page.down") end, desc = "Scroll opencode down" },
         ["<leader>m"] = { desc = " Markdown Preview"},
+        ["<leader>2"] = { group = "Gemini", icon = "🔮"},
       },
       v = {
         ["J"] = { ":m '>+1<CR>gv-gv" },
@@ -97,6 +98,8 @@ return {
         ["<leader>1a"] = { function() require("opencode").ask("@this: ", { submit = true }) end, desc = "Ask opencode…" },
         ["<leader>1c"] = { function() require("opencode").select() end, desc = "Execute opencode action…" },
         ["<leader>1gr"] = { function() return require("opencode").operator("@this ") end, desc = "Add range to opencode", expr = true },
+        ["<leader>2"] = { group = "Gemini", icon = "🔮"},
+
       },
       t = {
         -- setting a mapping to false will disable it
