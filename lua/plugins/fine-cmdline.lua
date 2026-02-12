@@ -5,6 +5,5 @@ return {
   },
   keys = {
     { ":", "<cmd>FineCmdline<cr>", desc = "Open cmdline" },
-
   },
 }
