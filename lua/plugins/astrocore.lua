@@ -1,4 +1,3 @@
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -72,39 +71,74 @@ return {
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
         -- quick save
-        ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+        ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
         -- delete selected word.
         ["<Leader>s"] = { desc = "👀" .. "Search word and edit" },
 
-        ["<leader>si"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gi<Left><Left><Left>]], desc = "Change word - Not confirmation" },
-        ["<leader>sc"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gic<left><Left><Left><Left>]], desc = "Change word - confirmation" },
+        ["<leader>si"] = {
+          [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gi<Left><Left><Left>]],
+          desc = "Change word - Not confirmation",
+        },
+        ["<leader>sc"] = {
+          [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gic<left><Left><Left><Left>]],
+          desc = "Change word - confirmation",
+        },
 
         -- Opencode
-        ["<leader>1"] = { group = "Opencode", icon = "🔮"},
-        ["<leader>1a"] = { function() require("opencode").ask("@this: ", { submit = true }) end, desc = "Ask opencode…" },
+        ["<leader>1"] = { group = "Opencode", icon = "🔮" },
+        ["<leader>1a"] = {
+          function() require("opencode").ask("@this: ", { submit = true }) end,
+          desc = "Ask opencode…",
+        },
         ["<leader>1c"] = { function() require("opencode").select() end, desc = "Execute opencode action…" },
         ["<leader>1t"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
-        ["<leader>1gr"] = { function() return require("opencode").operator("@this ") end,  desc = "Add range to opencode", expr = true  },
-        ["<leader>1go"] = { function() return require("opencode").operator("@this ") .. "_" end,  desc = "Add line to opencode", expr = true  },
-        ["<leader>1u"] = { function() require("opencode").command("session.half.page.up") end, desc = "Scroll opencode up" },
-        ["<leader>1d"] = { function() require("opencode").command("session.half.page.down") end, desc = "Scroll opencode down" },
-        ["<leader>m"] = { desc = " Markdown Preview"},
-        ["<leader>2"] = { group = "Gemini", icon = "🔮"},
+        ["<leader>1gr"] = {
+          function() return require("opencode").operator "@this " end,
+          desc = "Add range to opencode",
+          expr = true,
+        },
+        ["<leader>1go"] = {
+          function() return require("opencode").operator "@this " .. "_" end,
+          desc = "Add line to opencode",
+          expr = true,
+        },
+        ["<leader>1u"] = {
+          function() require("opencode").command "session.half.page.up" end,
+          desc = "Scroll opencode up",
+        },
+        ["<leader>1d"] = {
+          function() require("opencode").command "session.half.page.down" end,
+          desc = "Scroll opencode down",
+        },
+        ["<leader>m"] = { desc = " Markdown Preview" },
+        ["<leader>2"] = { group = "Gemini", icon = "🔮" },
+        ["<leader>3"] = { group = "Codex", icon = "🔮" },
+        ["<leader>3t"] = { function() require("codex").toggle() end, desc = "Codex: Toggle" },
       },
       v = {
         ["J"] = { ":m '>+1<CR>gv-gv" },
         ["K"] = { ":m '<-2<CR>gv-gv" },
-        ["<leader>1"] = { group = "Opencode", icon = "🔮"},
-        ["<leader>1a"] = { function() require("opencode").ask("@this: ", { submit = true }) end, desc = "Ask opencode…" },
+        ["<leader>1"] = { group = "Opencode", icon = "🔮" },
+        ["<leader>1a"] = {
+          function() require("opencode").ask("@this: ", { submit = true }) end,
+          desc = "Ask opencode…",
+        },
         ["<leader>1c"] = { function() require("opencode").select() end, desc = "Execute opencode action…" },
-        ["<leader>1gr"] = { function() return require("opencode").operator("@this ") end, desc = "Add range to opencode", expr = true },
-        ["<leader>2"] = { group = "Gemini", icon = "🔮"},
-
+        ["<leader>1gr"] = {
+          function() return require("opencode").operator "@this " end,
+          desc = "Add range to opencode",
+          expr = true,
+        },
+        ["<leader>2"] = { group = "Gemini", icon = "🔮" },
+        ["<leader>3"] = { group = "Codex", icon = "🔮" },
+        ["<leader>3a"] = { function() require("codex").actions.send_selection() end, desc = "Codex: Send selection" },
       },
       t = {
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,
         ["<C-\\>"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
+        ["<C-t>"] = { function() require("codex").toggle() end, desc = "Codex: Toggle" },
+        ["<C-f>"] = {"<cmd>Gemini toggle<cr>", desc = "Toggle Gemini CLI"},
       },
     },
   },
